@@ -13,9 +13,9 @@ socketio = SocketIO(app)
 # Koneksi ke database MySQL
 db = pymysql.connect(
     host="localhost",
-    user="root",
-    password="",
-    database="chat"
+    user="username",
+    password="password",
+    database="db"
 )
 cursor = db.cursor()
 
