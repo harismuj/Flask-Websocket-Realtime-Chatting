@@ -103,8 +103,12 @@ def send_message():
 
 @app.route('/get_messages')
 def get_messages():
-    now = datetime.now()
-    cursor.execute("SELECT * FROM messages WHERE created_at = %s ORDER BY created_at DESC",(now))
+    now = datetime.datetime.now()
+    # Mendapatkan tanggal hari ini
+    tanggal_hari_ini = now.date()
+    # Membuat objek datetime untuk jam 00:00:00 pada tanggal hari ini
+    waktu_mulai_hari_ini = datetime.datetime.combine(tanggal_hari_ini, datetime.time.min)
+    cursor.execute("SELECT * FROM messages WHERE created_at > %s ORDER BY created_at DESC", (waktu_mulai_hari_ini,))
     messages = cursor.fetchall()
     messages_list = [{'sender': message[1], 'message': message[2]} for message in messages]
     return jsonify(messages_list)
