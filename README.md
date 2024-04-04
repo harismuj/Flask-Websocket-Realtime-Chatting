@@ -32,6 +32,3 @@ python app.py
 
 Kontribusi terhadap pengembangan aplikasi ini dipersilakan. Silakan buat *issue* atau kirim *pull request* untuk menyumbang ide atau perbaikan.
 
-### Lisensi
-
-Aplikasi ini dilisensikan di bawah Lisensi MIT. Lihat file `LICENSE` untuk detailnya.
